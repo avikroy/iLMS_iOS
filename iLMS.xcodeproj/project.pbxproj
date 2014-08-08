@@ -140,8 +140,6 @@
 		8C0520D71939C8D900761334 /* NavigationOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0520D61939C8D900761334 /* NavigationOrientation.m */; };
 		8C082E88193655790024BC92 /* APSSimpleWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C082E87193655790024BC92 /* APSSimpleWebView.m */; };
 		8C082E8B193656360024BC92 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C082E8A193656360024BC92 /* UIImage+Resize.m */; };
-		8C24C865198C0D9D00DD5AF3 /* libConnectionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152A198AA37E00EEC354 /* libConnectionManager.a */; };
-		8C24C866198C0DA700DD5AF3 /* libRememberMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152C198AA38B00EEC354 /* libRememberMe.a */; };
 		8C2746DA19342DD500F0F13E /* iLMSViewDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2746D819342DD500F0F13E /* iLMSViewDetailsViewController.m */; };
 		8C2746DB19342DD500F0F13E /* iLMSViewDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2746D919342DD500F0F13E /* iLMSViewDetailsViewController.xib */; };
 		8C39D34819382B2900EF53E9 /* iLMSTestanalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C39D34619382B2900EF53E9 /* iLMSTestanalysisViewController.m */; };
@@ -201,6 +199,8 @@
 		8CE9DA2F193A3D8600B8CF99 /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9DA2E193A3D8600B8CF99 /* 57x57.png */; };
 		8CE9DA31193A3D8F00B8CF99 /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9DA30193A3D8F00B8CF99 /* 114x114.png */; };
 		8CF29847193AF957001A73B5 /* show.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8CF29846193AF954001A73B5 /* show.jpg */; };
+		8CF7F8671995536A00BF3A6D /* libConnectionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152A198AA37E00EEC354 /* libConnectionManager.a */; };
+		8CF7F8681995537500BF3A6D /* libRememberMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152C198AA38B00EEC354 /* libRememberMe.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -446,8 +446,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C24C866198C0DA700DD5AF3 /* libRememberMe.a in Frameworks */,
-				8C24C865198C0D9D00DD5AF3 /* libConnectionManager.a in Frameworks */,
+				8CF7F8681995537500BF3A6D /* libRememberMe.a in Frameworks */,
+				8CF7F8671995536A00BF3A6D /* libConnectionManager.a in Frameworks */,
 				8C6E579C1936584800E4329C /* QuartzCore.framework in Frameworks */,
 				8CE6718C192E5E3600FCBB66 /* UIKit.framework in Frameworks */,
 				8CE6718E192E5E3600FCBB66 /* Foundation.framework in Frameworks */,
@@ -1410,6 +1410,10 @@
 					Library,
 					"$(PROJECT_DIR)/Remember",
 					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12ACC400-1CC9-47DB-AD5E-7E758EA4E739";
@@ -1435,6 +1439,10 @@
 					Library,
 					"$(PROJECT_DIR)/Connection",
 					Library,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
 					"$(PROJECT_DIR)/Connection",
 					Library,
 					"$(PROJECT_DIR)/Remember",

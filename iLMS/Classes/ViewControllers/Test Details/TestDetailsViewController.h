@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface TestDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,NSXMLParserDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lblUserName;
 @property (weak, nonatomic) IBOutlet UILabel *lblCompanyName;
 
