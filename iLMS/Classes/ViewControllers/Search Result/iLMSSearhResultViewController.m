@@ -134,10 +134,10 @@
     
     NSMutableDictionary *aDict=[self.ownSearchArray objectAtIndex:indexPath.row];
 //
-    cell.textLabel.text=[NSString stringWithFormat:@"%@.   %@ | %@ |  \n%@ | %@ ",[NSString stringWithFormat:@"%d",indexPath.row+1],[aDict objectForKey:@"UnitName"],[aDict objectForKey:@"SampleNo"],[aDict objectForKey:@"SampleID"],[aDict objectForKey:@"SampleDate"]];
+    cell.textLabel.text=[NSString stringWithFormat:@"%@.   %@ | %@ |  \n%@ | %@ ",[NSString stringWithFormat:@"%ld",indexPath.row+1],[aDict objectForKey:@"UnitName"],[aDict objectForKey:@"SampleNo"],[aDict objectForKey:@"SampleID"],[aDict objectForKey:@"SampleDate"]];
     
     if([[UIDevice currentDevice] userInterfaceIdiom ]==UIUserInterfaceIdiomPad){
-        cell.textLabel.text=[NSString stringWithFormat:@"%@.   %@ | %@ |  %@ | %@ ",[NSString stringWithFormat:@"%d",indexPath.row+1],[aDict objectForKey:@"UnitName"],[aDict objectForKey:@"SampleNo"],[aDict objectForKey:@"SampleID"],[aDict objectForKey:@"SampleDate"]];
+        cell.textLabel.text=[NSString stringWithFormat:@"%@.   %@ | %@ |  %@ | %@ ",[NSString stringWithFormat:@"%ld",indexPath.row+1],[aDict objectForKey:@"UnitName"],[aDict objectForKey:@"SampleNo"],[aDict objectForKey:@"SampleID"],[aDict objectForKey:@"SampleDate"]];
         
     }
 
