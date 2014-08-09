@@ -15,6 +15,12 @@
 {
     NSArray *arrTitle,*arrKeys;
     NSDictionary *dictResult;
+    NSXMLParser   *xmlParser;
+    NSMutableString  *soapResults;
+    BOOL   elementFound;
+    NSMutableArray *arrayResult;
+
+
 }
 @property (nonatomic, retain) MBProgressHUD *HUD;
 
@@ -59,7 +65,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return arrKeys.count;
+    return [arrayResult count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,22 +84,16 @@
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     NSString *cellText=@"";
-//    NSRange rangeValue = [cellText rangeOfString:@"_X0020_" options:NSCaseInsensitiveSearch];
+    
+    NSString *key=[[[arrayResult objectAtIndex:indexPath.row] allKeys] objectAtIndex:0];
+    NSString *value=[[arrayResult objectAtIndex:indexPath.row] objectForKey:key];
 
-//    BOOL found = ( rangeValue.location != NSNotFound );
-//    if(found){
-//        
-//    }else{
-//        
-//    }
-    cellText=[[NSString stringWithFormat:@"  %@",[arrKeys objectAtIndex:indexPath.row] ] stringByReplacingOccurrencesOfString:@"x0020" withString:@" "];
+    cellText=[[NSString stringWithFormat:@"  %@",key] stringByReplacingOccurrencesOfString:@"x0020" withString:@" "];
     cellText=[cellText stringByReplacingOccurrencesOfString:@"_" withString:@" "];
     cellText=[cellText stringByReplacingOccurrencesOfString:@"  " withString:@" "];
 
-//    cellText=[[NSString stringWithFormat:@"  %@",[[arrKeys objectAtIndex:indexPath.row] capitalizedString]] stringByReplacingOccurrencesOfString:@"X0020" withString:@" "];
-    
     cell.lblTitle.text=[cellText capitalizedString];
-    cell.lblSubTitle.text=[[[dictResult objectForKey:[arrKeys objectAtIndex:indexPath.row]] objectForKey:@"text"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    cell.lblSubTitle.text=[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if([[cell.lblSubTitle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0){
         cell.lblSubTitle.text=@"0";
     }
@@ -149,16 +149,17 @@
     [self hideHUD];
     if([response isKindOfClass:[NSDictionary class]]){
         NSDictionary *responseDict=[[[[(NSDictionary *)response objectForKey:@"soap:Envelope"] objectForKey:@"soap:Body"] objectForKey:@"WP7FetchSampleElementDetailsResponse"] objectForKey:@"WP7FetchSampleElementDetailsResult"] ;
-        NSDictionary *finalDict=[XMLReader dictionaryForXMLString:[responseDict objectForKey:@"text"] error:NULL];
-        id object=[[finalDict objectForKey:@"NewDataSet"] objectForKey:@"Table"];
-        if([object isKindOfClass:[NSArray class]]){
-            arrTitle=(NSMutableArray *)object;
-        }else if([object isKindOfClass:[NSDictionary class]]){
-            arrKeys=[object allKeys ];
-            arrTitle=[[NSMutableArray alloc] initWithObjects:object , nil];
-            dictResult=(NSDictionary *)object;
-        }
-        [self.tableTestDetails reloadData];
+        [self parseXML:[responseDict objectForKey:@"text"]];
+//        NSDictionary *finalDict=[XMLReader dictionaryForXMLString:[responseDict objectForKey:@"text"] error:NULL];
+//        id object=[[finalDict objectForKey:@"NewDataSet"] objectForKey:@"Table"];
+//        if([object isKindOfClass:[NSArray class]]){
+//            arrTitle=(NSMutableArray *)object;
+//        }else if([object isKindOfClass:[NSDictionary class]]){
+//            arrKeys=[object allKeys ];
+//            arrTitle=[[NSMutableArray alloc] initWithObjects:object , nil];
+//            dictResult=(NSDictionary *)object;
+//        }
+//        [self.tableTestDetails reloadData];
         
     }else{
         [[[UIAlertView alloc] initWithTitle:[iLMSCommon getAppDisplayName] message:@"There is no data to be shown" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
@@ -190,5 +191,307 @@
     [self.HUD hide:YES];
 }
 
+#pragma mark - parse xml
+
+- (void)parseXML:(NSString *)strData{
+    
+    xmlParser = [[NSXMLParser alloc] initWithData: [strData dataUsingEncoding:NSUTF8StringEncoding]];
+    [xmlParser setDelegate: self];
+    [xmlParser setShouldResolveExternalEntities:YES];
+    [xmlParser parse];
+}
+
+-(void)  parser:(NSXMLParser *) parser
+didStartElement:(NSString *) elementName
+   namespaceURI:(NSString *) namespaceURI
+  qualifiedName:(NSString *) qName
+     attributes:(NSDictionary *) attributeDict
+{
+    
+    if( [elementName isEqualToString:@"Table"])
+    {
+        if (!arrayResult)
+        {
+            arrayResult=[[NSMutableArray alloc] init];
+        }
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"lead"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"iron"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"aluminium"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"copper"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"chromium"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"tin"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"nickel"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"silicon"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"sodium"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"magnesium"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"zinc"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"molybdenum"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"calcium"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"phosphorous"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"boron"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"tbn"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"soot"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"glycol"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"fuel_x0020_dilution"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"oxidation"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"nitration"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"sulphation"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"tan"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"water"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"pq-90"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"isocode"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"total_particle_count"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"viscosityat100c"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"viscosityat40c"])
+    {
+        elementFound = TRUE;
+    }
+    else if([elementName isEqualToString:@"pq-90"])
+    {
+        elementFound = TRUE;
+    }
+
+    if(elementFound){
+        soapResults = [[NSMutableString alloc] init];
+
+    }
+}
+
+-(void)parser:(NSXMLParser *) parser foundCharacters:(NSString *)string
+{
+    if (elementFound)
+    {
+        [soapResults appendString: string];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
+{
+    NSLog(@"Parser error %@ ",[parseError description]);
+}
+
+
+//---when the end of element is found---
+-(void)parser:(NSXMLParser *)parser
+didEndElement:(NSString *)elementName
+ namespaceURI:(NSString *)namespaceURI
+qualifiedName:(NSString *)qName
+{
+    if ([elementName isEqualToString:@"Table"])
+    {
+        NSLog(@"display the soap results%@",arrayResult);
+        [self.tableTestDetails reloadData];
+    }
+    else if([elementName isEqualToString:@"lead"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:@"lead"]];
+    }
+    else if([elementName isEqualToString:@"iron"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"aluminium"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"copper"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"chromium"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"tin"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"nickel"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"silicon"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"sodium"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"magnesium"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"zinc"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"molybdenum"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"calcium"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"phosphorous"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"boron"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"tbn"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"soot"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"glycol"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"fuel_x0020_dilution"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"oxidation"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"nitration"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"sulphation"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"tan"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"water"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"pq-90"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"isocode"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"total_particle_count"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"viscosityat100c"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"viscosityat40c"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+    else if([elementName isEqualToString:@"pq-90"])
+    {
+        [arrayResult addObject:[NSDictionary dictionaryWithObject:soapResults forKey:elementName]];
+    }
+
+    
+//    [soapResults setString:@""];
+    elementFound = FALSE;
+}
 
 @end
