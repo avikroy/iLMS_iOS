@@ -44,7 +44,7 @@
     self.headerView.layer.cornerRadius=3.0;
     arrTitle=[[NSMutableArray alloc]initWithObjects:@"Normal",@"Warning",@"Action",nil];
     arrSubTitle=[[NSMutableArray alloc]initWithObjects:@"Tap to view samples with Normal severity",@"Tap to view samples with Warning severity",@"Tap to view samples with Action severity",nil];
-    arrImg=[[NSMutableArray alloc]initWithObjects:@"Unknown",@"Urgent",@"Caution",nil];
+    arrImg=[[NSMutableArray alloc]initWithObjects:@"Unknown",@"Caution",@"Urgent",nil];
 //    self.tableSeverity.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.lblCompanyName.text=[NSString stringWithFormat:@"Company : %@",[[iLMSLoggedinUser getSharedinstance] userType  ]];
     self.lblUserName.text=[NSString stringWithFormat:@"Welcome %@",[[iLMSLoggedinUser getSharedinstance] userPassword  ]];

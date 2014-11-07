@@ -133,8 +133,6 @@
 		8C082E8B193656360024BC92 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C082E8A193656360024BC92 /* UIImage+Resize.m */; };
 		8C2746DA19342DD500F0F13E /* iLMSViewDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2746D819342DD500F0F13E /* iLMSViewDetailsViewController.m */; };
 		8C2746DB19342DD500F0F13E /* iLMSViewDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2746D919342DD500F0F13E /* iLMSViewDetailsViewController.xib */; };
-		8C291F6B1995E3820022D5D0 /* libConnectionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152A198AA37E00EEC354 /* libConnectionManager.a */; };
-		8C291F6C1995E38A0022D5D0 /* libRememberMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152C198AA38B00EEC354 /* libRememberMe.a */; };
 		8C291F771995E51E0022D5D0 /* 1024x748.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F6E1995E51E0022D5D0 /* 1024x748.png */; };
 		8C291F781995E51E0022D5D0 /* 320x426.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F6F1995E51E0022D5D0 /* 320x426.png */; };
 		8C291F791995E51E0022D5D0 /* 320x470.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F701995E51E0022D5D0 /* 320x470.png */; };
@@ -145,7 +143,6 @@
 		8C291F7E1995E51E0022D5D0 /* 720x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F751995E51E0022D5D0 /* 720x960.png */; };
 		8C291F7F1995E51E0022D5D0 /* 768x1004.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F761995E51E0022D5D0 /* 768x1004.png */; };
 		8C291F811995E5D40022D5D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F801995E5D40022D5D0 /* Images.xcassets */; };
-		8C291F851995EFD80022D5D0 /* 72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C291F841995EFD80022D5D0 /* 72x72.png */; };
 		8C39D34819382B2900EF53E9 /* iLMSTestanalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C39D34619382B2900EF53E9 /* iLMSTestanalysisViewController.m */; };
 		8C39D34919382B2900EF53E9 /* iLMSTestanalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C39D34719382B2900EF53E9 /* iLMSTestanalysisViewController.xib */; };
 		8C3C2E8519350B910044FB33 /* iLMSSearchSamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3C2E8419350B910044FB33 /* iLMSSearchSamples.m */; };
@@ -177,6 +174,8 @@
 		8CB881641939F8D600BA8F00 /* iLMSTestDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB881621939F8D600BA8F00 /* iLMSTestDetailsViewController.xib */; };
 		8CB881681939F90D00BA8F00 /* TestDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB881661939F90D00BA8F00 /* TestDetailsViewController.m */; };
 		8CB881691939F90D00BA8F00 /* TestDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB881671939F90D00BA8F00 /* TestDetailsViewController.xib */; };
+		8CB8DB441A0C627700C240EC /* libConnectionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152A198AA37E00EEC354 /* libConnectionManager.a */; };
+		8CB8DB451A0C627E00C240EC /* libRememberMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC6152C198AA38B00EEC354 /* libRememberMe.a */; };
 		8CCE25661933BB080050D681 /* iLMSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE25641933BB080050D681 /* iLMSSearchViewController.m */; };
 		8CCE25671933BB080050D681 /* iLMSSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCE25651933BB080050D681 /* iLMSSearchViewController.xib */; };
 		8CCE25701933C2510050D681 /* NSString+iLMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE256F1933C2510050D681 /* NSString+iLMS.m */; };
@@ -200,8 +199,6 @@
 		8CE671C6192E623700FCBB66 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE671BE192E623700FCBB66 /* RequestManager.m */; };
 		8CE671C7192E623700FCBB66 /* iLMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE671C2192E623700FCBB66 /* iLMSViewController.m */; };
 		8CE671C8192E623700FCBB66 /* iLMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE671C3192E623700FCBB66 /* iLMSViewController.xib */; };
-		8CE9DA2F193A3D8600B8CF99 /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9DA2E193A3D8600B8CF99 /* 57x57.png */; };
-		8CE9DA31193A3D8F00B8CF99 /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9DA30193A3D8F00B8CF99 /* 114x114.png */; };
 		8CF29847193AF957001A73B5 /* show.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8CF29846193AF954001A73B5 /* show.jpg */; };
 /* End PBXBuildFile section */
 
@@ -350,7 +347,6 @@
 		8C291F751995E51E0022D5D0 /* 720x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 720x960.png; sourceTree = "<group>"; };
 		8C291F761995E51E0022D5D0 /* 768x1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 768x1004.png; sourceTree = "<group>"; };
 		8C291F801995E5D40022D5D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8C291F841995EFD80022D5D0 /* 72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72x72.png; sourceTree = "<group>"; };
 		8C39D34519382B2900EF53E9 /* iLMSTestanalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iLMSTestanalysisViewController.h; sourceTree = "<group>"; };
 		8C39D34619382B2900EF53E9 /* iLMSTestanalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iLMSTestanalysisViewController.m; sourceTree = "<group>"; };
 		8C39D34719382B2900EF53E9 /* iLMSTestanalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iLMSTestanalysisViewController.xib; sourceTree = "<group>"; };
@@ -440,8 +436,6 @@
 		8CE671C1192E623700FCBB66 /* iLMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iLMSViewController.h; sourceTree = "<group>"; };
 		8CE671C2192E623700FCBB66 /* iLMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iLMSViewController.m; sourceTree = "<group>"; };
 		8CE671C3192E623700FCBB66 /* iLMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iLMSViewController.xib; sourceTree = "<group>"; };
-		8CE9DA2E193A3D8600B8CF99 /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57x57.png; sourceTree = "<group>"; };
-		8CE9DA30193A3D8F00B8CF99 /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114x114.png; sourceTree = "<group>"; };
 		8CF29846193AF954001A73B5 /* show.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = show.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -450,8 +444,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C291F6C1995E38A0022D5D0 /* libRememberMe.a in Frameworks */,
-				8C291F6B1995E3820022D5D0 /* libConnectionManager.a in Frameworks */,
+				8CB8DB451A0C627E00C240EC /* libRememberMe.a in Frameworks */,
+				8CB8DB441A0C627700C240EC /* libConnectionManager.a in Frameworks */,
 				8C6E579C1936584800E4329C /* QuartzCore.framework in Frameworks */,
 				8CE6718C192E5E3600FCBB66 /* UIKit.framework in Frameworks */,
 				8CE6718E192E5E3600FCBB66 /* Foundation.framework in Frameworks */,
@@ -906,9 +900,6 @@
 		8CE6717F192E5E3600FCBB66 = {
 			isa = PBXGroup;
 			children = (
-				8CE9DA30193A3D8F00B8CF99 /* 114x114.png */,
-				8CE9DA2E193A3D8600B8CF99 /* 57x57.png */,
-				8C291F841995EFD80022D5D0 /* 72x72.png */,
 				8C291F6D1995E51E0022D5D0 /* Background */,
 				8CE67191192E5E3600FCBB66 /* iLMS */,
 				8CE6718A192E5E3600FCBB66 /* Frameworks */,
@@ -1165,7 +1156,6 @@
 				0A4CB3731931984F000DEC47 /* nov.png in Resources */,
 				0A4CB3741931984F000DEC47 /* oct.png in Resources */,
 				0A4CB3751931984F000DEC47 /* on_off5.png in Resources */,
-				8C291F851995EFD80022D5D0 /* 72x72.png in Resources */,
 				0A4CB3761931984F000DEC47 /* on_off5_2x.png in Resources */,
 				0A4CB3771931984F000DEC47 /* password.png in Resources */,
 				0A4CB3781931984F000DEC47 /* passwordnew.png in Resources */,
@@ -1226,9 +1216,7 @@
 				8CB8815E1939E15800BA8F00 /* iLMSAlertsReportsViewController.xib in Resources */,
 				8CB881641939F8D600BA8F00 /* iLMSTestDetailsViewController.xib in Resources */,
 				8CB881691939F90D00BA8F00 /* TestDetailsViewController.xib in Resources */,
-				8CE9DA2F193A3D8600B8CF99 /* 57x57.png in Resources */,
 				8C291F7A1995E51E0022D5D0 /* 320x480.png in Resources */,
-				8CE9DA31193A3D8F00B8CF99 /* 114x114.png in Resources */,
 				8CD99D6A193AE14F00D7AF16 /* iLMSViewGraphController.xib in Resources */,
 				8CF29847193AF957001A73B5 /* show.jpg in Resources */,
 				8CE647F9193CDE87002F853A /* backButton3.png in Resources */,
@@ -1324,9 +1312,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
+				PROVISIONING_PROFILE = "2798d5db-f6ff-4713-ac21-fb0601792855";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2798d5db-f6ff-4713-ac21-fb0601792855";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1351,10 +1340,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
+				PROVISIONING_PROFILE = "2798d5db-f6ff-4713-ac21-fb0601792855";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2798d5db-f6ff-4713-ac21-fb0601792855";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1429,10 +1419,30 @@
 					Library,
 					"$(PROJECT_DIR)/Remember",
 					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
+				PROVISIONING_PROFILE = "2798d5db-f6ff-4713-ac21-fb0601792855";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2798d5db-f6ff-4713-ac21-fb0601792855";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1444,6 +1454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Bit Wave Solutions Ltd. (FTWW4D6W8T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bit Wave Solutions Ltd. (FTWW4D6W8T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLMS/iLMS-Prefix.pch";
 				INFOPLIST_FILE = "iLMS/iLMS-Info.plist";
@@ -1508,9 +1519,30 @@
 					Library,
 					"$(PROJECT_DIR)/Remember",
 					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
+					"$(PROJECT_DIR)/Connection",
+					Library,
+					"$(PROJECT_DIR)/Remember",
+					Me,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2E1C8F23-7212-4038-9B57-6FD364E2178C";
+				PROVISIONING_PROFILE = "2798d5db-f6ff-4713-ac21-fb0601792855";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2798d5db-f6ff-4713-ac21-fb0601792855";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

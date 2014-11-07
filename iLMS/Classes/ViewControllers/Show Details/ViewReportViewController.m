@@ -112,10 +112,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row==9){
-        return 110;
-    }
-    return 47;
+    NSString *cellText=[self.arrSubtitle objectAtIndex:indexPath.row];
+    return [self getHeightForTest:cellText]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,15 +130,23 @@
     
     cell.lblSubTitle.text=[self.arrSubtitle objectAtIndex:indexPath.row];
     cell.lblSubTitle.numberOfLines=0;
-    if(indexPath.row==9){
-        CGRect framelblTitle=cell.lblTitle.frame;
-        framelblTitle.size.height=108;
-        cell.lblTitle.frame=framelblTitle;
-        
-        CGRect framelblSubTitle=cell.lblSubTitle.frame;
-        framelblSubTitle.size.height=108;
-        cell.lblSubTitle.frame=framelblSubTitle;
-    }
+//    if(indexPath.row==9){
+//        CGRect framelblTitle=cell.lblTitle.frame;
+//        framelblTitle.size.height=108;
+//        cell.lblTitle.frame=framelblTitle;
+//        
+//        CGRect framelblSubTitle=cell.lblSubTitle.frame;
+//        framelblSubTitle.size.height=108;
+//        cell.lblSubTitle.frame=framelblSubTitle;
+//    }
+    CGRect framelblTitle=cell.lblTitle.frame;
+    framelblTitle.size.height=[self getHeightForTest:cell.lblSubTitle.text];
+    cell.lblTitle.frame=framelblTitle;
+    
+    CGRect framelblSubTitle=cell.lblSubTitle.frame;
+    framelblSubTitle.size.height=[self getHeightForTest:cell.lblSubTitle.text];
+    cell.lblSubTitle.frame=framelblSubTitle;
+    
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [UIView new] ;
@@ -175,5 +181,18 @@
     [iLMSCommon logout];
 }
 
+#pragma mark -
+#pragma mark - sting height calculation
+
+- (CGFloat )getHeightForTest:(NSString *)strText{
+    CGSize maximumSize = CGSizeMake(196, 9999);
+    NSString *myString = strText    ;
+    UIFont *myFont = [UIFont systemFontOfSize:12];
+    CGSize myStringSize = [myString sizeWithFont:myFont
+                               constrainedToSize:maximumSize
+                                   lineBreakMode:NSLineBreakByCharWrapping];
+    
+    return (myStringSize.height<47?47:myStringSize.height);
+}
 
 @end

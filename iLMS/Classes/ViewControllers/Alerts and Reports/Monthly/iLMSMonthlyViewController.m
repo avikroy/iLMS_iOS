@@ -91,6 +91,20 @@
         
         [self getCountForMonth:@"Nov" forLabel:self.lblNov inArray:sapleArray];
         [self getCountForMonth:@"Dec" forLabel:self.lblDec inArray:sapleArray];
+        
+        [self.lblJan adjustsFontSizeToFitWidth];
+        [self.lblFeb adjustsFontSizeToFitWidth];
+        [self.lblMarch adjustsFontSizeToFitWidth];
+        [self.lblApr adjustsFontSizeToFitWidth];
+        [self.lblMay adjustsFontSizeToFitWidth];
+        [self.lblJun adjustsFontSizeToFitWidth];
+        [self.lblJuly adjustsFontSizeToFitWidth];
+        [self.lblAug adjustsFontSizeToFitWidth];
+        [self.lblSept adjustsFontSizeToFitWidth];
+        [self.lbloct adjustsFontSizeToFitWidth];
+        [self.lblNov adjustsFontSizeToFitWidth];
+        [self.lblDec adjustsFontSizeToFitWidth];
+
     }
 }
 
